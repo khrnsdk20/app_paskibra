@@ -90,6 +90,10 @@ switch ($page) {
         (new AdminController())->delete();
         break;
 
+    case 'kartu-anggota-download':
+        require '../app/controllers/DownloadController.php';
+        (new DownloadController())->download();
+        break;
 
 
     // ==========================

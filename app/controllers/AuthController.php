@@ -7,7 +7,6 @@ class AuthController
     public function __construct()
     {
         require __DIR__ . '/../../config/database.php';
-        session_start();
         $this->db = $conn;
     }
 
@@ -42,6 +41,8 @@ class AuthController
 
     public function loginProcess()
     {
+        session_start();
+
         $email = $_POST['email'];
         $pass  = $_POST['password'];
 
@@ -51,7 +52,11 @@ class AuthController
         $user = $stmt->get_result()->fetch_assoc();
 
         if ($user && password_verify($pass, $user['password'])) {
-            $_SESSION['user'] = $user;
+
+            // SET SESSION BENAR
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user']    = $user;
+
             header("Location: ?page=beranda");
             exit;
         }

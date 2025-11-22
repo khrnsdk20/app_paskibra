@@ -11,7 +11,7 @@
     </div>
 
     <div style="margin-top:20px;">
-        <a href="?page=kartu-anggota-pdf" class="btn btn-primary">Download PDF</a>
+        <a href="?page=kartu-anggota-download" class="btn btn-primary mt-3">Download Kartu</a>
     </div>
 
 </div>
